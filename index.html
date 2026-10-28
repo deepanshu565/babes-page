@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#160d18" />
+  <title>For Rashmi ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #2a1a25;
+      --paper: #fffaf7;
+      --blush: #efb7c7;
+      --rose: #cf6f87;
+      --wine: #70243d;
+      --gold: #dcae65;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 12%, rgba(255,255,255,.9), transparent 24rem),
+        linear-gradient(135deg, #fffaf7 0%, #f8ebe9 48%, #f4dfe5 100%);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: .16;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.23'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      animation: drift 12s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    .orb.one { width: 25rem; height: 25rem; right: -9rem; top: -8rem; background: rgba(229, 166, 187, .28); }
+    .orb.two { width: 18rem; height: 18rem; left: -8rem; bottom: 2rem; background: rgba(220, 174, 101, .15); animation-delay: -5s; }
+
+    .intro {
+      width: min(760px, 92vw);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      color: var(--wine);
+      font-size: .72rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .eyebrow::before, .eyebrow::after { content: ""; width: 2.5rem; height: 1px; background: var(--gold); }
+
+    h1 {
+      margin: 0;
+      font-family: "Italiana", serif;
+      font-weight: 400;
+      font-size: clamp(4.8rem, 15vw, 10.5rem);
+      line-height: .75;
+      letter-spacing: -.045em;
+      color: var(--wine);
+    }
+
+    h1 span {
+      display: block;
+      margin-top: .25em;
+      color: var(--rose);
+      font-family: "DM Sans", sans-serif;
+      font-size: .17em;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      transform: translateX(.19em);
+    }
+
+    .intro p {
+      max-width: 530px;
+      margin: 2.4rem auto 2rem;
+      font-family: "Italiana", serif;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.7;
+      color: #694856;
+    }
+
+    .open-button {
+      border: 0;
+      border-radius: 999px;
+      padding: 1rem 1.5rem;
+      color: white;
+      background: var(--wine);
+      box-shadow: 0 18px 45px rgba(112, 36, 61, .22);
+      font: 600 .74rem "DM Sans", sans-serif;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .open-button:hover { transform: translateY(-3px); box-shadow: 0 22px 55px rgba(112,36,61,.32); }
+    .open-button:focus-visible { outline: 3px solid rgba(220,174,101,.7); outline-offset: 5px; }
+
+    .scroll-mark {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      width: 1px;
+      height: 3.2rem;
+      background: linear-gradient(var(--gold), transparent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .letter-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90svh;
+      background: var(--wine);
+      color: #fff7f5;
+      overflow: hidden;
+    }
+
+    .letter-image {
+      min-height: 600px;
+      background:
+        linear-gradient(180deg, rgba(50,17,31,.05), rgba(50,17,31,.45)),
+        url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=85") center/cover;
+    }
+
+    .letter-copy {
+      display: grid;
+      align-content: center;
+      padding: clamp(3rem, 8vw, 8rem);
+    }
+
+    .letter-copy .number { color: var(--gold); font-size: .72rem; letter-spacing: .25em; }
+
+    .letter-copy h2 {
+      max-width: 620px;
+      margin: .7em 0 .55em;
+      font: 400 clamp(2.8rem, 6vw, 5.8rem)/.98 "Italiana", serif;
+    }
+
+    .letter-copy p {
+      max-width: 560px;
+      color: #efced8;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.9;
+    }
+
+    .quote {
+      min-height: 74svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: var(--paper);
+    }
+
+    .quote blockquote {
+      max-width: 980px;
+      margin: 0;
+      color: var(--wine);
+      font: 400 clamp(2.5rem, 7vw, 6.5rem)/1.08 "Italiana", serif;
+    }
+
+    .quote blockquote em { color: var(--rose); }
+
+    .wish {
+      padding: clamp(4rem, 10vw, 9rem) 1.5rem;
+      text-align: center;
+      background: #1d121a;
+      color: white;
+    }
+
+    .wish h2 { margin: 0; font: 400 clamp(3rem, 8vw, 7rem)/1 "Italiana", serif; }
+    .wish p { max-width: 530px; margin: 1.8rem auto 2.5rem; color: #caaeba; line-height: 1.8; }
+
+    .heart-button {
+      display: inline-grid;
+      width: 82px;
+      height: 82px;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      background: var(--rose);
+      color: white;
+      font-size: 1.65rem;
+      cursor: pointer;
+      box-shadow: 0 0 0 0 rgba(207,111,135,.45);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .heart-button:hover { transform: scale(1.08); }
+    .heart-button:active { transform: scale(.92); box-shadow: 0 0 0 20px transparent; }
+
+    .heart {
+      position: fixed;
+      z-index: 10;
+      pointer-events: none;
+      font-size: 1.2rem;
+      animation: floatAway 1.8s ease-out forwards;
+    }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @keyframes drift { to { transform: translate(2.5rem, 2rem) scale(1.08); } }
+    @keyframes pulse { 50% { opacity: .25; transform: scaleY(.55); transform-origin: bottom; } }
+    @keyframes floatAway {
+      0% { opacity: 1; transform: translate(0,0) rotate(0deg) scale(.7); }
+      100% { opacity: 0; transform: translate(var(--x), -180px) rotate(var(--r)) scale(1.35); }
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding-inline: 1.2rem; }
+      h1 { font-size: clamp(5rem, 26vw, 8rem); }
+      .letter-section { grid-template-columns: 1fr; }
+      .letter-image { min-height: 54svh; }
+      .letter-copy { padding: 4rem 1.5rem 5rem; }
+      .scroll-mark { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <div class="intro">
+        <div class="eyebrow">A little corner of the universe</div>
+        <h1>Rashmi<span>For you</span></h1>
+        <button class="open-button" id="openLetter">Open your letter</button>
+      </div>
+      <div class="scroll-mark" aria-hidden="true"></div>
+    </section>
+
+    <section class="letter-section" id="letter">
+      <div class="letter-image" role="img" aria-label="A dreamy field of pale pink flowers"></div>
+      <article class="letter-copy reveal">
+        <span class="number">01 — A REMINDER</span>
+        <h2>You make the world softer.</h2>
+        <p>In a world that moves too fast, your kindness is a pause. Your smile is a sunrise. And the way you are completely, wonderfully yourself makes every day brighter.</p>
+        <p>There is something quietly beautiful about the care you bring to others and the strength you carry through every challenge. You have a way of turning even the smallest moment into something worth remembering.</p>
+        <p>Your dreams are worthy of every bit of courage you have. And wherever life takes you, may you always remember how deeply your presence matters—how a single conversation with you can feel warmer, lighter, and full of hope.</p>
+        <p>This little page exists for one simple reason: to remind you that you are seen, valued, and absolutely amazing.</p>
+      </article>
+    </section>
+
+    <section class="quote">
+      <blockquote class="reveal">May your life feel as beautiful as <em>the light you bring</em> to everyone around you.</blockquote>
+    </section>
+
+    <section class="wish">
+      <h2 class="reveal">Keep being magic.</h2>
+      <p class="reveal">Today and every day after, here’s to your dreams, your laughter, and all the wonderful things waiting for you. May you never forget that being yourself is not just enough—it is your most beautiful gift.</p>
+      <button class="heart-button reveal" id="heartButton" aria-label="Send a heart">♥</button>
+    </section>
+  </main>
+
+  <script>
+    const letter = document.querySelector('#letter');
+    document.querySelector('#openLetter').addEventListener('click', () => {
+      letter.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+    document.querySelector('#heartButton').addEventListener('click', (event) => {
+      const rect = event.currentTarget.getBoundingClientRect();
+      for (let i = 0; i < 14; i++) {
+        const heart = document.createElement('span');
+        heart.className = 'heart';
+        heart.textContent = ['♥', '♡', '✦'][i % 3];
+        heart.style.left = `${rect.left + rect.width / 2}px`;
+        heart.style.top = `${rect.top + rect.height / 2}px`;
+        heart.style.setProperty('--x', `${(Math.random() - .5) * 260}px`);
+        heart.style.setProperty('--r', `${(Math.random() - .5) * 70}deg`);
+        heart.style.animationDelay = `${i * 35}ms`;
+        document.body.appendChild(heart);
+        heart.addEventListener('animationend', () => heart.remove());
+      }
+    });
+  </script>
+</body>
+</html>
